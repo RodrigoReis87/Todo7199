@@ -2,7 +2,7 @@
     <h1>Nova Tarefa</h1>
     <br>
     <textarea cols="30" rows="2" placeholder="ex: Recarregar meu telefone" formControlName="title"></textarea>
-    <small class="error" *ngIf=" form.controls['title'].invalid">
+    <small class="error" *ngIf="form.controls['title'].invalid">
         <strong>Tarefa inválida</strong>
     </small>
     <br>
