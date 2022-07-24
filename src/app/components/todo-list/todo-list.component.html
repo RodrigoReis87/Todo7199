@@ -1,32 +1,11 @@
-<ul class="todos">
-    <li>
-        <div>
-            <a class="remove-item"><i class="fa fa-check"></i></a>
+<ul class="todos" *ngIf="todos">
+    <li *ngFor="let todo of todos">
+        <div *ngif="!todo.done">
+            <a class="remove-item" (click)="markAsDone(todo)"><i class="fa fa-check"></i></a>
         </div>
-        <a>
-            Ir ao Supermercado
-            <br>
-            <small>18/07/2022</small>
-        </a>
-    </li>
-    <li>
-        <div>
-            <a class="remove-item"><i class="fa fa-check"></i></a>
-        </div>
-        <a>
-            Ir ao Supermercado
-            <br>
-            <small>18/07/2022</small>
-        </a>
-    </li>
-    <li>
-        <div>
-            <a class="remove-item"><i class="fa fa-check"></i></a>
-        </div>
-        <a>
-            Ir ao Supermercado
-            <br>
-            <small>18/07/2022</small>
+        <a [ngClass]="{'done':todo.done}">
+            {{todo.title}}<br>
+            <small>{{todo.date | date: 'dd/MM/yy'}}</small>
         </a>
     </li>
 </ul>

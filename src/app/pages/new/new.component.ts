@@ -19,7 +19,6 @@ export class NewComponent implements OnInit {
     private afAuth: AngularFireAuth,
   ) {
     this.form = this.fb.group({
-      user: '', //To do - pegar o usuário logado
       title: ['', Validators.compose([
         Validators.minLength(3),
         Validators.maxLength(60),
